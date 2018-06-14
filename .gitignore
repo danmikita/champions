@@ -1,0 +1,11 @@
+*.iml
+.project
+.idea
+.settings
+.classpath
+target
+*.log
+*.versionsBackup
+classpath.txt
+.java-version
+

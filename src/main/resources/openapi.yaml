@@ -1,0 +1,56 @@
+swagger: "2.0"
+info:
+  description: "This is the Champion service"
+  version: "2.8.5"
+  title: "Champions"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/"
+schemes:
+- "http"
+paths:
+  /champions:
+    get:
+      summary: "Get all champions"
+      operationId: "getChampions"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/champion"
+definitions:
+  champion:
+    type: "object"
+    properties:
+      name:
+        description: "The name of the Champion"
+        type: "string"
+      championId:
+        description: "The numeric ID of the Champion"
+        type: "integer"
+      role:
+        type: "string"
+        description: "Role"
+        enum:
+        - "ADC"
+        - "TOP"
+        - "JUNGLE"
+        - "SUPPORT"
+      skinIds:
+        description: "List of all skinIds for the Champion"
+        type: "array"
+        items:
+          type: "integer"
+      featured:
+        type: "boolean"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
